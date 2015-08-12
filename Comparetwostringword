@@ -1,0 +1,51 @@
+function myFunction() {
+        var temp = "one two three four four two";
+        var temp1 ="one two three three one six";
+
+        var array = temp.split(" "); 
+	array.sort(); 
+	temp = array.join(" "); 
+	do { 
+		var newTemp = temp; 
+		var temp = newTemp.replace(/\s(\w+\s)\1/, " $1"); 
+	} while (temp.length != newTemp.length); 
+	temp = temp.replace(/^(\w+\s)\1/, "$1"); 
+	temp = temp.replace(/(\s\w+)\1$/, "$1"); 
+        alert(temp);
+
+        var array = temp1.split(" "); 
+	array.sort(); 
+	temp1= array.join(" "); 
+	do { 
+		var newTemp = temp1; 
+		var temp1= newTemp.replace(/\s(\w+\s)\1/, " $1"); 
+	} while (temp1.length != newTemp.length); 
+	temp1= temp1.replace(/^(\w+\s)\1/, "$1"); 
+	temp1= temp1.replace(/(\s\w+)\1$/, "$1"); 
+        alert(temp1);
+        var tempspilit =temp.split(" ");
+        alert(tempspilit);
+        var temp1spilit =temp1.split(" ");
+        alert(temp1spilit);
+        var templen=tempspilit.length;
+        var temp1len=temp1spilit.length;
+        alert(templen);
+        alert(temp1len);
+        
+        var i;
+        var j;
+       for(i=0; i<templen; i++)
+       {
+           for(j=0; j<temp1len; j++) 
+           {
+              //alert("I="+tempspilit[i]+"," +i);
+              //alert("J="+temp1spilit[j]+","+j); 
+              if(tempspilit[i]==temp1spilit[j])
+              {
+                    temp1spilit.splice(j, 1);
+                    //temp1spilit.removeByIndex(j);
+              }
+           }
+       }
+       alert(temp1spilit);
+}
